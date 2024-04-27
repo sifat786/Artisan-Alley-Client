@@ -4,6 +4,7 @@ import Root from "../Layout/Root";
 import ErrorPage from "../Pages/ErrorPage";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
+import AddCraft from "../Pages/AddCraft";
 
 const router = createBrowserRouter([
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         {
           path: '/signup',
           element: <SignUp/>
+        },
+        {
+          path: '/addCraft',
+          element: <AddCraft/>
         },
       ]
     },

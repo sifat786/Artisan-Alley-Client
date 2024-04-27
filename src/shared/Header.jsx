@@ -44,16 +44,16 @@ const Header = () => {
     const navLinks = (
         <>
         <li>
-        <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
         </li>
         <li>
-        <NavLink to="/about">All art and Craft</NavLink>
+            <NavLink to="/about">All art and Craft</NavLink>
         </li>
         <li>
-        <NavLink to="/career">Add craft item</NavLink>
+            <NavLink to="/addCraft">Add Craft Item</NavLink>
         </li>
         <li>
-        <NavLink to="/register">My art and craft</NavLink>
+            <NavLink to="/register">My art and craft</NavLink>
         </li>
     </>
     );    

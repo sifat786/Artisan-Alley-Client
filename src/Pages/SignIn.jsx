@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
@@ -7,18 +7,24 @@ import Swal from "sweetalert2";
 const SignIn = () => {
   
   const {signInUser, googleLogin, gitHubLogin} = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
   
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const handleSignIn = (data) => {
     const {email, password} = data;
+    reset();
+
     //! login:
     signInUser(email, password)
     .then(res => {
+
       console.log(res);
       Swal.fire({
         title: 'Success',
@@ -26,6 +32,10 @@ const SignIn = () => {
         icon: 'success',
         confirmButtonText: 'OK'
       })
+      setTimeout(() => {
+        navigate(location.state ? location.state : '/'); 
+      }, 3000);
+
     })
     .catch(err => console.log(err))
 
@@ -35,12 +45,17 @@ const SignIn = () => {
   const handleGoogleLogin = () => {
     googleLogin()
     .then(() => {
+
       Swal.fire({
         title: 'Success',
         text: 'SignIn with Google successfully done',
         icon: 'success',
         confirmButtonText: 'OK'
       })
+      setTimeout(() => {
+         navigate('/')
+      }, 3000);
+
     })
     .catch(err => console.log(err))
   }
@@ -49,20 +64,33 @@ const SignIn = () => {
   const handleGitHubLogin = () => {
     gitHubLogin()
     .then(() => {
+
       Swal.fire({
         title: 'Success',
-        text: 'SignIn with Google successfully done',
+        text: 'SignIn with GitHub successfully done',
         icon: 'success',
         confirmButtonText: 'OK'
       })
+      setTimeout(() => {
+          navigate('/')
+      }, 3000);
+
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err);
+      Swal.fire({
+        title: 'Error',
+        text: 'your email or password is not matched',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+    })
   }
 
   return (
     <div>
       <Helmet>
-        <title>Artisan Alley | SignUp</title>
+        <title>Artisan Alley | SignIn</title>
       </Helmet>
 
       <div className="w-full max-w-2xl p-4 rounded-md md:p-12 shadow-lg mx-auto bg-gradient-to-r from-purple-300 to-pink-400">

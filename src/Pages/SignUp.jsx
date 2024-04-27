@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from './../Hooks/useAuth';
 import Swal from "sweetalert2";
@@ -8,15 +8,18 @@ import { updateProfile } from "firebase/auth";
 const SignUp = () => {
 
   const {createUser} = useAuth();
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const handleSignUp = (data) => {
     const {email, password, name, image} = data;
+    reset();
 
     //! create user:
     createUser(email, password)
@@ -33,9 +36,20 @@ const SignUp = () => {
           icon: 'success',
           confirmButtonText: 'OK'
         })
+        setTimeout(() => {
+          navigate('/')
+      }, 3000);
       })
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err);
+      Swal.fire({
+        title: 'Error',
+        text: 'Your email is already registered',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+    })
   };
 
   return (
