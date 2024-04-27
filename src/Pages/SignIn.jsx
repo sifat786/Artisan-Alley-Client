@@ -1,8 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
+  
+  const {signInUser} = useAuth();
+  
   const {
     register,
     handleSubmit,
@@ -10,7 +15,20 @@ const SignIn = () => {
   } = useForm();
 
   const handleSignIn = (data) => {
-    console.log(data);
+    const {email, password} = data;
+    //! login:
+    signInUser(email, password)
+    .then(res => {
+      console.log(res);
+      Swal.fire({
+        title: 'Success',
+        text: 'SignIn successfully done',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
+    })
+    .catch(err => console.log(err))
+
   };
 
   return (
