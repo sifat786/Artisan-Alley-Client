@@ -19,6 +19,8 @@ export default {
       'lg': '1240px',
     },
 
+    themes: ["light", "dark", "synthwave"],
+
     extend: {},
   },
 
