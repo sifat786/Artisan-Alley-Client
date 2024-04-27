@@ -3,9 +3,9 @@
 
 const Feature = () => {
     return (
-        <div className="my-[70px]">
-            <h1 className="text-center text-neutral-900 dark:text-white text-2xl lg:text-[35px] font-semibold">Painting and Drawing Features</h1>
-            <p className="mb-5 md:py-2 w-auto md:w-[500px] lg:w-[600px] m-auto text-center text-sm  md:text-base text-gray-300 font-medium">Dive into a world of artistic expression with our Painting and Drawing Features. From beginner basics to advanced techniques, discover inspiration, tutorials, tools, and supplies to elevate your creative journey to new heights.</p>
+        <div className="mb-[60px] mt-[100px]">
+            <h1 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-l from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text">Painting and Drawing Features</h1>
+            <p className="mb-10 md:py-2 w-auto md:w-[500px] lg:w-[600px] m-auto text-center text-sm  md:text-base font-medium">Dive into a world of artistic expression with our Painting and Drawing Features. From beginner basics to advanced techniques, discover inspiration, tutorials, tools, and supplies to elevate your creative journey to new heights.</p>
 
             <section className=" dark:bg-gray-100 dark:text-gray-800">
                 <div className="container mx-auto space-y-12">

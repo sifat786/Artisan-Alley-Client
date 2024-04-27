@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import userDefaultPic from '../assets/userDefaultPic.png'
+import 'react-tooltip/dist/react-tooltip.css';
+// import { Tooltip } from "react-tooltip";
 
 
 const Header = () => {
@@ -92,11 +94,18 @@ const Header = () => {
                 </div>
 
                 <div className="navbar-end gap-2 md:gap-5">
-                    <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar bg-white">
-                            <div className="w-10 rounded-full">
-                                <img src={userDefaultPic} />
+                    <div className="dropdown dropdown-end z-10">
+
+                        <div tabIndex={0} role="button" className={user ? 'tooltip tooltip-bottom border-4 border-blue-500 rounded-full' : ''} data-tip={user ? user.displayName : ''}>
+                            <div  className="w-10 rounded-full">
+                                {
+                                    user?.photoURL === null ?
+                                        <img className="rounded-full w-full h-full" src={userDefaultPic} />
+                                        :
+                                        <img className="rounded-full w-full h-full" src={user ? user?.photoURL : userDefaultPic} />
+                                }
                             </div>
+
                         </div>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 text-center">
                             <li><a>Settings</a></li>
@@ -109,7 +118,6 @@ const Header = () => {
                                 }
                             </li>
                         </ul>
-
                     </div>
 
                     {/* dark-theme */}

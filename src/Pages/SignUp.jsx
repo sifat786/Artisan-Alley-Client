@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from './../Hooks/useAuth';
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
 
@@ -15,17 +16,23 @@ const SignUp = () => {
   } = useForm();
 
   const handleSignUp = (data) => {
-    const {email, password} = data;
+    const {email, password, name, image} = data;
 
     //! create user:
     createUser(email, password)
     .then(res => {
-      console.log(res.user);
-      Swal.fire({
-        title: 'Success',
-        text: 'SignUp successfully done',
-        icon: 'success',
-        confirmButtonText: 'OK'
+      updateProfile(res.user, {
+        displayName: name,
+        photoURL: image
+      })
+      .then(() => {
+        console.log('profile updated');
+        Swal.fire({
+          title: 'Success',
+          text: 'SignUp successfully done',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
       })
     })
     .catch(err => console.log(err))
@@ -104,7 +111,7 @@ const SignUp = () => {
                 </label>
               </div>
               <input
-                type="password"
+                type="text"
                 placeholder="Enter Your password"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 text-gray-800 focus:border-default-600 focus:border-default-600"
                 {...register("password", {

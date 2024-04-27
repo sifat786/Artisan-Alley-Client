@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import Feature from "../components/Feature";
+import Teams from "../components/Teams";
 
 
 
@@ -8,6 +9,7 @@ const Home = () => {
         <div className="container">
             <Banner/>
             <Feature/>
+            <Teams/>
         </div>
     );
 };
