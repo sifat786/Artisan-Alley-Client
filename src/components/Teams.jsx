@@ -13,10 +13,10 @@ import boy4 from "../assets/boy4.jpg"
 
 const Teams = () => {
     return (
-        <div>
+        <div className="mt-[60px]">
             
             
-            <section className="py-6">
+            <section className="pb-6">
                 <div className="container p-4 mx-auto space-y-16 sm:p-10">
                     <div className="space-y-4">
                         <h3 className="text-2xl md:text-[35px] font-bold leading-none text-center bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">Meet Our Artists</h3>

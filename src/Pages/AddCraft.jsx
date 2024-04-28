@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const AddCraft = () => {
@@ -16,19 +17,32 @@ const AddCraft = () => {
         const stock = form.stock.value;
         const description = form.description.value;
 
-        const newPainting = {
-            name,
-            price,
-            rating,
-            time,
-            category,
-            photo,
-            customization,
-            stock,
-            description,
-            };
-            console.log(newPainting);
-        };
+        const newCrafts = {name,price,rating,time,category,photo,customization,stock,description};
+        console.log(newCrafts);
+
+        //! data send to server:
+        fetch('http://localhost:5000/crafts', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newCrafts)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Painting added successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+            }
+            form.reset();
+        })
+        .catch(err => console.log(err))
+    };
 
     return (    
         <div className="my-[100px] container">
@@ -41,8 +55,8 @@ const AddCraft = () => {
                         </div>
                         <div className="col-span-full sm:col-span-3 flex flex-col">
                             <label className="font-rale text-xl">Subcategory Name</label>
-                            <select defaultValue='option1' name="category" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
-                                <option value='option1'>Landscape Painting</option>
+                            <select name="category" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
+                                <option>Landscape Painting</option>
                                 <option>Portrait Drawing</option>
                                 <option>Water Color Painting</option>
                                 <option>Oil Painting</option>
@@ -56,12 +70,12 @@ const AddCraft = () => {
                         </div>
                         <div className="col-span-full sm:col-span-3">
                             <label className=" font-rale text-xl">Price</label>
-                            <input type="text" name="price" placeholder="Enter painting price" className="input input-info mt-2 py-[11px] pl-[11px]  text-opacity-60 text-base w-full font-rale rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                            <input type="number" name="price" placeholder="Enter painting price" className="input input-info mt-2 py-[11px] pl-[11px]  text-opacity-60 text-base w-full font-rale rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                         </div>
                         <div className="col-span-full sm:col-span-3">
                             <label className=" font-rale text-xl">customization</label>
-                            <select defaultValue='op1' name="customization" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
-                                <option value='op1'>Yes</option>
+                            <select name="customization" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
+                                <option>Yes</option>
                                 <option>No</option>
                             </select>
                         </div>
@@ -71,12 +85,12 @@ const AddCraft = () => {
                         </div>
                         <div className="col-span-full sm:col-span-3">
                             <label className=" font-rale text-xl">Processing Time(hr)</label>
-                            <input type="text" name="time" placeholder="Enter painting processing time" className="input input-info mt-2 py-[11px] pl-[11px]  text-opacity-60 text-base w-full font-rale rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                            <input type="number" name="time" placeholder="Enter painting processing time" className="input input-info mt-2 py-[11px] pl-[11px]  text-opacity-60 text-base w-full font-rale rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                         </div>
                         <div className="col-span-full sm:col-span-3">
                             <label className=" font-rale text-xl">Stock Status</label>
-                            <select defaultValue='op1' name="stock" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
-                                <option value='op1'>In stock</option>
+                            <select name="stock" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
+                                <option>In stock</option>
                                 <option>Made to order</option>
                             </select>
                         </div>
@@ -86,7 +100,7 @@ const AddCraft = () => {
                             <textarea name="description" cols="30" rows="10" className="input input-info mt-2 pl-[11px]  text-opacity-60 text-base w-full font-rale rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"></textarea>
                         </div>
                         <div className="col-span-full mt-5 flex justify-center lg:justify-end">
-                            <input type="submit" value="Add Painting" className='py-[10px] bg-gradient-to-l from-blue-300 to-indigo-500 text-center rounded-[5px] w-full lg:w-auto px-0 lg:px-[100px] cursor-pointer text-2xl font-bold'/>
+                            <input type="submit" value="Add Painting" className='py-[10px] bg-gradient-to-l from-blue-300 to-indigo-500 text-center rounded-[5px] w-full lg:w-auto px-0 lg:px-[100px] cursor-pointer text-black text-2xl font-bold'/>
                         </div>
                     </div>
             </form>

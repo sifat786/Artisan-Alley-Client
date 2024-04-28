@@ -3,8 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import userDefaultPic from '../assets/userDefaultPic.png'
-import 'react-tooltip/dist/react-tooltip.css';
-// import { Tooltip } from "react-tooltip";
 
 
 const Header = () => {
@@ -108,13 +106,13 @@ const Header = () => {
 
                         </div>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 text-center">
-                            <li><a>Settings</a></li>
-                            <li className="text-center">
+                            <li className="py-1">{user? user?.displayName : 'user name not found'}</li>
+                            <li className="text-center w-full py-1">
                                 {
                                     user ?
-                                    <a onClick={handleSignOut} className="btn-neutral">SignOut</a>
+                                    <a onClick={handleSignOut} className="btn-ghost bg-base-300 text-center w-full flex justify-center">SignOut</a>
                                     :
-                                    <Link to={'/signin'} className="py-1 bg-base-300 ">SignIn</Link>
+                                    <Link to={'/signin'} className="py-1 bg-base-300">SignIn</Link>
                                 }
                             </li>
                         </ul>
