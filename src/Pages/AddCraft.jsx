@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
 
 
 const AddCraft = () => {
+
+    const {user} = useAuth();
 
     const handleAddPainting = (e) =>{
         e.preventDefault();
@@ -16,8 +19,10 @@ const AddCraft = () => {
         const customization = form.customization.value;
         const stock = form.stock.value;
         const description = form.description.value;
+        const userName = user?.displayName;
+        const email = user?.email;
 
-        const newCrafts = {name,price,rating,time,category,photo,customization,stock,description};
+        const newCrafts = { name,price,rating,time,category,photo,customization,stock,description, userName, email };
         console.log(newCrafts);
 
         //! data send to server:

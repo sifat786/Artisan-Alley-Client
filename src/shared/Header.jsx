@@ -95,7 +95,7 @@ const Header = () => {
                     <div className="dropdown dropdown-end z-10">
 
                         <div tabIndex={0} role="button" className={user ? 'tooltip tooltip-bottom border-4 border-blue-500 rounded-full' : ''} data-tip={user ? user.displayName : ''}>
-                            <div  className="w-10 rounded-full">
+                            <div  className="w-10 h-10 rounded-full">
                                 {
                                     user?.photoURL === null ?
                                         <img className="rounded-full w-full h-full" src={userDefaultPic} />
