@@ -1,8 +1,17 @@
-# React + Vite
+# Welcome to Artisan Alley
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site URL:** [Artisan Alley](https://artisan-alley-cc33d.web.app/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features and Characteristics
+
+- **Discover Exclusive Properties with Responsive Design:** Browse exclusive painting and drawing from around the world on any device (mobile, laptop, or desktop).
+- **Update Painting:** Using the MongoDB PUT method to update users painting data.
+- **Sell Painting:** Creative artists can effortlessly showcase and sell their paintings.
+- **Smooth Animations:** Enhance user experience with smooth animations using react-awesome-reveal.
+- **Firebase Authentication:** Utilize Firebase Authentication to handle user authentication securely.
+
+
+## Website Category
+
+- **Painting and Drawing**

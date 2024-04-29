@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaPaintBrush } from "react-icons/fa";
 import { Vortex } from 'react-loader-spinner';
 import useCrafts from './../Hooks/useCrafts';
+import { IoStar } from 'react-icons/io5';
 
 
 const CraftItems = () => {
@@ -33,7 +34,7 @@ const CraftItems = () => {
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 space-y-4 md:space-y-0'>
                         {   data.slice(0, 6).map(craft => {
 
-                                const { _id,name,price,category,photo,stock } = craft;
+                                const { _id,name,price,category,photo,stock,rating,customization } = craft;
                                 return (
                                     <div key={_id} className='w-auto md:w-[338px] lg:w-[395px] relative font-lora'>
 
@@ -51,7 +52,15 @@ const CraftItems = () => {
                                                 <h6 className='border-2 border-black px-3 w-fit py-1 rounded-lg text-[18px] font-bold '>${price}</h6>
                                             </div>
 
-                                            <div className='text-center mt-8'>
+                                            <div className="flex items-center justify-between my-5">
+                                                <p><b>Customization: </b>{customization}</p>
+                                                <div className="flex items-center gap-1 mr-2">
+                                                    <IoStar/>
+                                                    <span>{rating}</span>
+                                                </div>
+                                            </div>
+
+                                            <div className='text-center'>
                                                 <Link to={`/craftDetails/${_id}`}>
                                                     <button className="bg-gradient-to-l from-rose-400 to-indigo-500 w-full py-2 px-4 md:py-[9px] md:px-11 text-white md:text-base lg:text-xl font-medium rounded-lg">View Details</button>
                                                 </Link>
