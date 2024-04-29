@@ -82,6 +82,7 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="your name"
+                required
                 className="w-full px-3 py-2 border rounded-md  border-gray-300 text-gray-800 focus:border-default-600 focus:border-default-600"
                 {...register("name")}
               />
@@ -113,6 +114,7 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="photoURL"
+                required
                 className="w-full px-3 py-2 border rounded-md  border-gray-300 text-gray-800 focus:border-default-600 focus:border-default-600"
                 {...register("image")}
               />

@@ -10,7 +10,7 @@ const Banner = () => {
     
 
     return (
-        <div className="mt-10 mb-6 md:mb-10">
+        <div className="mt-6 md:mt-10">
             <Swiper
                 navigation = {true} 
                 modules = {[Navigation, Autoplay]}

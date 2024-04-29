@@ -1,13 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../Pages/Home";
 import Root from "../Layout/Root";
+import AddCraft from "../Pages/AddCraft";
+import AllCraft from "../Pages/AllCraft";
 import ErrorPage from "../Pages/ErrorPage";
+import Home from "../Pages/Home";
+import MyCraft from "../Pages/MyCraft";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
-import AddCraft from "../Pages/AddCraft";
+import UpdateCraft from "../Pages/UpdateCraft";
 import CraftDetails from './../Pages/CraftDetails';
 import PrivateRoute from "./PrivateRoute";
-import AllCraft from "../Pages/AllCraft";
 
 const router = createBrowserRouter([
 
@@ -19,7 +21,6 @@ const router = createBrowserRouter([
         {
           path: '/',
           element: <Home/>,
-          loader: () => fetch('http://localhost:5000/crafts')
         },
         {
           path: '/signin',
@@ -30,18 +31,25 @@ const router = createBrowserRouter([
           element: <SignUp/>
         },
         {
+          path: '/update/:id',
+          element: <PrivateRoute><UpdateCraft/></PrivateRoute>,
+          loader: ({params}) => fetch(`https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/crafts/${params.id}`)
+        },
+        {
           path: '/addCraft',
           element: <PrivateRoute><AddCraft/></PrivateRoute>,
         },
         {
+          path: '/myCraft',
+          element: <PrivateRoute><MyCraft/></PrivateRoute>,
+        },
+        {
           path: '/allCraft',
           element: <AllCraft/>,
-          loader: () => fetch('http://localhost:5000/crafts')
         },
         {
           path: '/craftDetails/:id',
           element: <PrivateRoute><CraftDetails/></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
         },
       ]
     },

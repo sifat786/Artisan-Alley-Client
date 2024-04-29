@@ -19,12 +19,13 @@ export default {
       'lg': '1240px',
     },
 
-    themes: ["light", "dark", "synthwave"],
-
     extend: {},
   },
 
 
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "synthwave"],
+  },
 
 }

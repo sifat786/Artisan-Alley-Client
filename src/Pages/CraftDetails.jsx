@@ -1,15 +1,51 @@
 import Marquee from "react-fast-marquee";
 import { Helmet } from "react-helmet-async";
 import { FaPaintBrush, FaRegStar } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+import useCrafts from "../Hooks/useCrafts";
+import { Vortex } from "react-loader-spinner";
 
 
 
 const CraftDetails = () => {
 
-    const loadedCraftDetails = useLoaderData();
+    const navigate = useNavigate();
+    const [singleData, setSingleData] = useState([]);
+    const {id} = useParams();
+    const {data, loading} = useCrafts();
+    
+    useEffect(() => {
+        if(data) {
+            const result = data.find((item) => item._id == id);
+            setSingleData(result);
+        }
+    }, [id, data])
+    
+    
+    const handleBack = () => {
+        navigate(-1);
+    }
 
-    const { name,price,rating,time,category,photo,customization,stock,description} = loadedCraftDetails;
+    const { name,price,rating,time,category,photo,customization,stock,description} = singleData || {};
+
+    if(loading) {
+        return (
+            <div className="mx-auto flex justify-center my-[100px] items-center">
+                <h1 className="text-4xl font-bold">Loading</h1>
+                <Vortex
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="vortex-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="vortex-wrapper"
+                    colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
+                />
+            </div>
+        )
+    }
 
     return (
         <div className="container my-[100px] mb-5 lg:my-[70px] lg:pt-1 flex flex-col justify-center items-center">
@@ -17,7 +53,12 @@ const CraftDetails = () => {
                 <title>{name}</title>
             </Helmet>
 
-            <h3 className='text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-l from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text'>{name} Details</h3>
+            <div onClick={handleBack} className="self-start rounded-md md:ml-6 lg:ml-[188px]">
+                <button className="flex items-center gap-2 btn bg-gradient-to-tr from-purple-300 to-pink-300 md:text-xl text-left justify-start">
+                    <FaArrowLeftLong/>
+                    Back
+                </button>
+            </div>
 
             <div className="rounded-[5px] border border-neutral-200 p-[15px] md:p-[20px] lg:p-[30px] mt-2 md:mt-8">
                 <img className='w-auto h-auto md:w-[600px] md:h-[300px] lg:w-[800px] lg:h-[420px] rounded-[5px]' src={photo} />

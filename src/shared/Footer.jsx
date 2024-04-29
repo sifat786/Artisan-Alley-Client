@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="bg-gradient-to-r from-purple-200 to-blue-300 dark:bg-slate-400 text-center text-surface/75  lg:text-left text-gray-700">
         <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 lg:justify-between">
           <div className="me-12 hidden lg:block">
-            <span>Get connected with us on social networks:</span>
+            <span className="font-semibold">Get connected with us on social networks:</span>
           </div>
 
           <div className="flex justify-center">
@@ -70,10 +70,10 @@ const Footer = () => {
         <div className="mx-6 py-10 text-center md:text-left">
           <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="">
-              <Link to={"/"} className="btn btn-ghost text-3xl font-black">
+              <Link to={"/"} className=" text-3xl font-black">
                 Artisan Alley
               </Link>
-              <p>
+              <p className="mt-2">
                 Explore the essence of creativity through our diverse
                 collection. Immerse yourself in artistry, passion, and
                 inspiration. Discover your next masterpiece today.
