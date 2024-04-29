@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { IoStar } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useCrafts from "../Hooks/useCrafts";
+import { Vortex } from "react-loader-spinner";
 
 
 
@@ -12,6 +14,7 @@ const MyCraft = () => {
     const {user} = useAuth();
     const [data, setData] = useState([]);
     const [crafts,setCrafts] = useState([]);
+    const {loading} = useCrafts();
 
     useEffect(() => {
         fetch(`https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/craftsByEmail/${user?.email}`)
@@ -71,6 +74,23 @@ const MyCraft = () => {
                 .catch(err => console.log(err))
             }
           });
+    }
+
+    if(loading) {
+        return (
+            <div className="mx-auto flex justify-center my-[100px] items-center">
+                <h1 className="text-4xl font-bold">Loading</h1>
+                <Vortex
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="vortex-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="vortex-wrapper"
+                    colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
+                />
+            </div>
+        )
     }
 
     return (
