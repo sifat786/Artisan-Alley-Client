@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 const Feature = () => {
     return (
         <div className=" mt-[100px]">
-            <h1 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-l from-yellow-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text">Painting and Drawing Features</h1>
+            <h1 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-r from-red-500 via-green-500 to-purple-500 text-transparent bg-clip-text mb-5 border-4  w-fit mx-auto py-2 px-5 ">Painting and Drawing Features</h1>
             <p className="mb-10 md:py-2 w-auto md:w-[500px] lg:w-[600px] m-auto text-center text-sm  md:text-base font-medium">Dive into a world of artistic expression with our Painting and Drawing Features. From beginner basics to advanced techniques, discover inspiration, tutorials, tools, and supplies to elevate your creative journey to new heights.</p>
             
             <section className=" dark:bg-gray-100 dark:text-gray-800">

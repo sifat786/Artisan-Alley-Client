@@ -1,0 +1,149 @@
+[
+  {
+    "price": "120",
+    "rating": "4.8",
+    "time": "20",
+    "category": "Landscape Painting",
+    "photo": "https://i.postimg.cc/L8dsgjkw/Landscape-Painting.jpg",
+    "customization": "Yes",
+    "stock": "Made to Order",
+    "description": "In this breathtaking mountain view landscape painting, majestic peaks rise proudly against a canvas of azure sky. Sunlight dances on snow-capped summits, casting long shadows across rocky slopes. A tranquil valley sprawls below, adorned with verdant forests and meandering streams. The air is crisp, carrying whispers of adventure and solitude. A sense of awe washes over the viewer, as they stand before nature's grandeur captured on canvas."
+  },
+  {
+    "name": "Ethereal Reverie",
+    "price": "180",
+    "rating": "4.6",
+    "time": "5",
+    "category": "Landscape Painting",
+    "photo": "https://i.ibb.co/px23qgw/Landscape.webp",
+    "customization": "No",
+    "stock": "In Stock",
+    "description": "In this breathtaking mountain view landscape painting, majestic peaks rise proudly against a canvas of azure sky. Sunlight dances on snow-capped summits, casting long shadows across rocky slopes. A tranquil valley sprawls below, adorned with verdant forests and meandering streams. The air is crisp, carrying whispers of adventure and solitude. A sense of awe washes over the viewer, as they stand before nature's grandeur captured on canvas."
+  },
+
+
+  {
+    "name": "Whispers of Eternity",
+    "price": "200",
+    "rating": "5",
+    "time": "5",
+    "category": "Portrait Drawing",
+    "photo": "https://i.postimg.cc/SKN9KwpD/Portrait-Drawing.jpg",
+    "customization": "Yes",
+    "stock": "In Stock",
+    "description": "A pencil sketch portrait drawing is a hand-drawn representation of a person's face or figure, created using graphite pencils on paper. This artistic technique emphasizes light, shadow, and fine details to capture the likeness and character of the subject. Typically done in black and white, pencil sketch portraits can evoke a sense of depth, emotion, and realism through careful shading and precise line work. They are often prized for their simplicity, elegance, and ability to convey the unique qualities of the individual being depicted."
+  },
+  {
+    "name": "Celestial Cascade",
+    "price": "330",
+    "rating": "4.7",
+    "time": "8",
+    "category": "Portrait Drawing",
+    "photo": "https://i.ibb.co/3p8grdb/portrait2.jpg",
+    "customization": "No",
+    "stock": "Made to Order",
+    "description": "A pencil sketch portrait drawing is a hand-drawn representation of a person's face or figure, created using graphite pencils on paper. This artistic technique emphasizes light, shadow, and fine details to capture the likeness and character of the subject. Typically done in black and white, pencil sketch portraits can evoke a sense of depth, emotion, and realism through careful shading and precise line work. They are often prized for their simplicity, elegance, and ability to convey the unique qualities of the individual being depicted."
+  },
+
+
+
+  {
+    "name": "Texas Notion",
+    "price": "550",
+    "rating": "4.9",
+    "time": "10",
+    "category": "Water Color Painting",
+    "photo": "https://i.postimg.cc/s26hGwjy/Watercolour-Painting.jpg",
+    "customization": "Yes",
+    "stock": "In Stock",
+    "description": "Watercolour painting is a versatile and delicate art form where pigments are suspended in water to create translucent layers of color on paper. Artists use various techniques such as wet-on-wet, wet-on-dry, and dry brushing to achieve different effects, ranging from soft gradients to fine details. Watercolour's fluid nature allows for spontaneous expressions and subtle nuances, making it a beloved medium for capturing landscapes, portraits, and still life with a sense of ethereal beauty."
+  },
+  {
+    "name": "Infinite Melancholy",
+    "price": "4000",
+    "rating": "5",
+    "time": "20",
+    "category": "Water Color Painting",
+    "photo": "https://i.ibb.co/QvFqL8S/water.png",
+    "customization": "No",
+    "stock": "Made to Order",
+    "description": "Watercolour painting is a versatile and delicate art form where pigments are suspended in water to create translucent layers of color on paper. Artists use various techniques such as wet-on-wet, wet-on-dry, and dry brushing to achieve different effects, ranging from soft gradients to fine details. Watercolour's fluid nature allows for spontaneous expressions and subtle nuances, making it a beloved medium for capturing landscapes, portraits, and still life with a sense of ethereal beauty."
+  },
+
+
+
+  {
+    "name": "Serenade in Scarlet",
+    "price": "600",
+    "rating": "4.9",
+    "time": "12",
+    "category": "Oil Painting",
+    "photo": "https://i.postimg.cc/ydDSmcxR/Oil-Painting.jpg",
+    "customization": "No",
+    "stock": "Made to Order",
+    "description": "Oil painting is a traditional artistic technique where pigments are mixed with a drying oil, usually linseed oil, to create vibrant and long-lasting images on canvas or other surfaces. It's characterized by its versatility, allowing artists to blend colors, create rich textures, and achieve various effects through layering and manipulation of the paint. Oil paintings often boast depth, richness, and a luminous quality due to the slow drying time of the oil, which enables artists to work gradually and make changes over an extended period. This medium has been widely used for centuries, producing some of the most iconic and enduring works of art in history."
+  },
+  {
+    "name": "Crimson Crescendo",
+    "price": "2000",
+    "rating": "5",
+    "time": "14",
+    "category": "Oil Painting",
+    "photo": "https://i.ibb.co/s3Y1rWM/oil.webp",
+    "customization": "Yes",
+    "stock": "In Stock",
+    "description": "Oil painting is a traditional artistic technique where pigments are mixed with a drying oil, usually linseed oil, to create vibrant and long-lasting images on canvas or other surfaces. It's characterized by its versatility, allowing artists to blend colors, create rich textures, and achieve various effects through layering and manipulation of the paint. Oil paintings often boast depth, richness, and a luminous quality due to the slow drying time of the oil, which enables artists to work gradually and make changes over an extended period. This medium has been widely used for centuries, producing some of the most iconic and enduring works of art in history."
+  },
+
+
+
+
+  {
+    "name": "Aurora's Lullaby",
+    "price": "300",
+    "rating": "4.7",
+    "time": "2",
+    "category": "Charcoal Sketching",
+    "photo": "https://i.postimg.cc/qR6zhrDX/Charcoal-Sketching.jpg",
+    "customization": "Yes",
+    "stock": "In Stock",
+    "description": "Charcoal sketching is a traditional artistic technique that involves using charcoal sticks or pencils to create drawings. Artists often use charcoal because of its rich, dark tones and its ability to be easily manipulated on paper. Charcoal sketches can range from quick, gestural studies to detailed, realistic renderings, making it a versatile medium for expressing various subjects and styles. The soft texture of charcoal allows for smooth blending and shading, while also allowing for expressive marks and textures. Overall, charcoal sketching offers artists a dynamic way to capture the essence of their subjects with bold strokes and subtle nuances."
+  },
+  {
+    "name": "Luminous Whispers",
+    "price": "900",
+    "rating": "4.8",
+    "time": "4",
+    "category": "Charcoal Sketching",
+    "photo": "https://i.ibb.co/1ZFsWkQ/coal.jpg",
+    "customization": "No",
+    "stock": "Made to Order",
+    "description": "Charcoal sketching is a traditional artistic technique that involves using charcoal sticks or pencils to create drawings. Artists often use charcoal because of its rich, dark tones and its ability to be easily manipulated on paper. Charcoal sketches can range from quick, gestural studies to detailed, realistic renderings, making it a versatile medium for expressing various subjects and styles. The soft texture of charcoal allows for smooth blending and shading, while also allowing for expressive marks and textures. Overall, charcoal sketching offers artists a dynamic way to capture the essence of their subjects with bold strokes and subtle nuances."
+  },
+
+
+  
+  {
+    "name": "Harmony of Twilight",
+    "price": "80",
+    "rating": "4.9",
+    "time": "1",
+    "category": "Cartoon Drawing",
+    "photo": "https://i.postimg.cc/VNnNmgJD/Cartoon-Drawing.jpg",
+    "customization": "No",
+    "stock": "Made to Order",
+    "description": "Cartoon drawing is a stylized form of visual art characterized by exaggerated features, simplified shapes, and vibrant colors. It often depicts humorous or whimsical scenes, characters, and situations, aiming to entertain and amuse audiences of all ages. Cartoonists use techniques such as caricature, exaggeration, and anthropomorphism to convey emotions, convey messages, or tell stories in a playful and accessible manner. Whether in comics, animations, or illustrations, cartoon drawings offer a delightful escape into imaginative worlds where anything is possible."
+  },
+  {
+    "name": "Veil of Tranquility",
+    "price": "800",
+    "rating": "5",
+    "time": "7",
+    "category": "Cartoon Drawing",
+    "photo": "https://i.ibb.co/9gPMHx1/drawing.jpg",
+    "customization": "Yes",
+    "stock": "In Stock",
+    "description": "Cartoon drawing is a stylized form of visual art characterized by exaggerated features, simplified shapes, and vibrant colors. It often depicts humorous or whimsical scenes, characters, and situations, aiming to entertain and amuse audiences of all ages. Cartoonists use techniques such as caricature, exaggeration, and anthropomorphism to convey emotions, convey messages, or tell stories in a playful and accessible manner. Whether in comics, animations, or illustrations, cartoon drawings offer a delightful escape into imaginative worlds where anything is possible."
+  }
+
+]

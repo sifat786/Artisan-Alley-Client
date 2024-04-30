@@ -8,7 +8,7 @@ const useCrafts = () => {
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            const res = await fetch('https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/crafts');
+            const res = await fetch('https://artisan-alley-server-rose.vercel.app/crafts');
             const data = await res.json();
             setData(data);
             setLoading(false);

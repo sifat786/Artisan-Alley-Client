@@ -27,7 +27,7 @@ const UpdateCraft = () => {
         const updateCrafts = { name,price,rating,time,category,photo,customization,stock,description };
 
         //! data send to server:
-        fetch(`https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/crafts/${_id}`, {
+        fetch(`https://artisan-alley-server-rose.vercel.app/crafts/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

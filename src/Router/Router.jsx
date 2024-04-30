@@ -7,6 +7,7 @@ import Home from "../Pages/Home";
 import MyCraft from "../Pages/MyCraft";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
+import SubCategory from "../Pages/SubCategory";
 import UpdateCraft from "../Pages/UpdateCraft";
 import CraftDetails from './../Pages/CraftDetails';
 import PrivateRoute from "./PrivateRoute";
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         {
           path: '/update/:id',
           element: <PrivateRoute><UpdateCraft/></PrivateRoute>,
-          loader: ({params}) => fetch(`https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/crafts/${params.id}`)
+          loader: ({params}) => fetch(`https://artisan-alley-server-rose.vercel.app/crafts/${params.id}`)
         },
         {
           path: '/addCraft',
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
         {
           path: '/craftDetails/:id',
           element: <PrivateRoute><CraftDetails/></PrivateRoute>,
+        },
+        {
+          path: '/subCategory/:category',
+          element: <SubCategory/>,
+          loader: ({params}) => fetch(`https://artisan-alley-server-rose.vercel.app/arts/${params.category}`)
         },
       ]
     },

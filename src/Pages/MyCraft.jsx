@@ -1,11 +1,11 @@
-import { FaPaintBrush } from "react-icons/fa";
-import useAuth from "../Hooks/useAuth";
 import { useEffect, useState } from "react";
+import { FaPaintBrush } from "react-icons/fa";
 import { IoStar } from "react-icons/io5";
+import { Vortex } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
 import useCrafts from "../Hooks/useCrafts";
-import { Vortex } from "react-loader-spinner";
 
 
 
@@ -17,7 +17,7 @@ const MyCraft = () => {
     const {loading} = useCrafts();
 
     useEffect(() => {
-        fetch(`https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/craftsByEmail/${user?.email}`)
+        fetch(`https://artisan-alley-server-rose.vercel.app/craftsByEmail/${user?.email}`)
         .then(res => res.json())
         .then(result => {
             setData(result);
@@ -56,7 +56,7 @@ const MyCraft = () => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/crafts/${id}`, {
+                fetch(`https://artisan-alley-server-rose.vercel.app/crafts/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -96,14 +96,14 @@ const MyCraft = () => {
     return (
         <div className="container my-[100px]">
 
-        <div className="flex justify-center w-fit my-6 font-medium">
+        <div className=" md:mx-auto w-fit my-6 font-medium">
             <select
             onChange={handleCustomizationFilter}
-            className="block appearance-none w-full border border-gray-400 hover:border-gray-400 px-4 py-2 pr-8 leading-tight focus:outline-none focus:shadow-outline"
+            className="block appearance-none border-4 rounded-lg border-blue-400 hover:border-purple-400 px-2 py-2"
             >
-            <option value="all">Show All</option>
-            <option value="Yes">Customization: Yes</option>
-            <option value="No">Customization: No</option>
+            <option value="all" className="bg-red-500">Show All</option>
+            <option value="Yes" className="bg-green-500">Customization: Yes</option>
+            <option value="No" className="bg-purple-500">Customization: No</option>
             </select>
         </div>
 
@@ -137,7 +137,7 @@ const MyCraft = () => {
 
                                     <div className='flex justify-between'>
                                         <Link to={`/update/${_id}`}>
-                                            <button className="bg-gradient-to-l from-rose-400 to-indigo-500 py-2 px-4 md:py-[9px] md:px-11 text-white md:text-base lg:text-xl font-medium rounded-lg">Update</button>
+                                            <button className="bg-gradient-to-l from-blue-300 to-indigo-500 py-2 px-4 md:py-[9px] md:px-11 text-white md:text-base lg:text-xl font-medium rounded-lg">Update</button>
                                         </Link>
                                             <button onClick={() => handleDeleteCraft(_id)} className="bg-red-500  py-2 px-4 md:py-[9px] md:px-11 text-white md:text-base lg:text-xl font-medium rounded-lg">Delete</button>
                                     </div>

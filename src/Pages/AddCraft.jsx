@@ -25,7 +25,7 @@ const AddCraft = () => {
         const newCrafts = { name,price,rating,time,category,photo,customization,stock,description, userName, email };
 
         //! data send to server:
-        fetch('https://artisan-alley-server-j4rfxbmvn-sifats-projects-19e6a574.vercel.app/crafts', {
+        fetch('https://artisan-alley-server-rose.vercel.app/crafts', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -49,7 +49,6 @@ const AddCraft = () => {
     };
 
     
-
     return (    
         <div className="my-10 md:my-[70px] lg:my-[100px] container">
             <form onSubmit={handleAddPainting} className="border-2 border-indigo-400 py-10 px-14 rounded-xl">

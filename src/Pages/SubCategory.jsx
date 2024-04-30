@@ -1,22 +1,21 @@
-import { Link } from 'react-router-dom';
 import { FaPaintBrush } from "react-icons/fa";
-import { Vortex } from 'react-loader-spinner';
-import useCrafts from './../Hooks/useCrafts';
-import { IoStar } from 'react-icons/io5';
+import { IoStar } from "react-icons/io5";
+import { Link, useLoaderData } from "react-router-dom";
+import useCrafts from "../Hooks/useCrafts";
+import { Vortex } from "react-loader-spinner";
 
 
-const CraftItems = () => {
+const SubCategory = () => {
 
-    const {data,loading} = useCrafts();
+    const loadedData = useLoaderData();
+    const {loading} = useCrafts();
 
     return (
-        <div className="mt-10 md:mt-[70px] lg:mt-[100px]">
-            <h1 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-r from-red-500 via-green-500 to-purple-500 text-transparent bg-clip-text mb-5 border-4  w-fit mx-auto py-2 px-5 ">Painting and Drawing</h1>
-            <p className="mb-5 md:mb-8 lg:mb-10 md:pt-2 w-auto md:w-[500px] lg:w-[600px] m-auto text-center text-sm  md:text-base font-medium">Explore our website&apos;s painting and drawing section for a diverse array of artistic expressions, from vibrant landscapes to intricate charcoal sketches.</p>
+        <div className="my-10 md:my-[70px] lg:my-[100px] container">
+            <h1 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-r from-red-500 via-green-500 to-purple-500 text-transparent bg-clip-text mb-5 lg:mb-10 border-4  w-fit mx-auto py-2 px-5 ">{loadedData[0].category}</h1>
 
             {
                 loading ? 
-
                     <>
                         <div className="mx-auto flex justify-center my-[100px] items-center">
                             <Vortex
@@ -31,10 +30,11 @@ const CraftItems = () => {
                         </div>
                     </>
                 :
-                    <div className='grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 space-y-4 md:space-y-0'>
-                        {   data.slice(0, 6).map(craft => {
 
-                                const { _id,name,price,category,photo,stock,rating,customization } = craft;
+                    <div className="mt-5 md:mt-[30px] lg:mt-[40px] grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 space-y-4 md:space-y-0">
+                        {
+                            loadedData.map((i => {
+                                const { _id,name, price, rating, category, photo, customization, stock} = i;
                                 return (
                                     <div key={_id} className=' relative font-lora'>
 
@@ -59,7 +59,6 @@ const CraftItems = () => {
                                                     <span>{rating}</span>
                                                 </div>
                                             </div>
-
                                             <div className='text-center'>
                                                 <Link to={`/craftDetails/${_id}`}>
                                                     <button className="bg-gradient-to-l from-rose-400 to-indigo-500 w-full py-2 px-4 md:py-[9px] md:px-11 text-white md:text-base lg:text-xl font-medium rounded-lg">View Details</button>
@@ -68,14 +67,13 @@ const CraftItems = () => {
                                         </div>
                                     </div>
                                 )
-                            })
+                            }))
                         }
                     </div>
-
             }
 
         </div>
     );
 };
 
-export default CraftItems;
+export default SubCategory;

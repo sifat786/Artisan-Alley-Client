@@ -19,7 +19,7 @@ const Teams = () => {
             <section className="pb-6">
                 <div className="container p-4 mx-auto space-y-16 sm:p-10">
                     <div className="space-y-4">
-                        <h3 className="text-2xl md:text-[35px] font-bold leading-none text-center bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">Meet Our Artists</h3>
+                        <h3 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-r from-red-500 via-green-500 to-purple-500 text-transparent bg-clip-text mb-5 border-4  w-fit mx-auto py-2 px-5 ">Meet Our Artists</h3>
                         <p className="max-w-2xl text-center mx-auto">Meet Our Artists: A collective of visionaries, each with a unique story to tell through their craft. Explore their diverse backgrounds and inspirations, and discover the magic behind their creations.</p>
                     </div>
                     <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
