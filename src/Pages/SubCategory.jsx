@@ -31,7 +31,7 @@ const SubCategory = () => {
                     </>
                 :
 
-                    <div className="mt-5 md:mt-[30px] lg:mt-[40px] grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 space-y-4 md:space-y-0">
+                    <div className="mt-5 md:mt-[30px] lg:mt-[40px] grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8">
                         {
                             loadedData.map((i => {
                                 const { _id,name, price, rating, category, photo, customization, stock} = i;
@@ -60,7 +60,7 @@ const SubCategory = () => {
                                                 </div>
                                             </div>
                                             <div className='text-center'>
-                                                <Link to={`/craftDetails/${_id}`}>
+                                                <Link to={`/craftDetails2/${_id}`}>
                                                     <button className="bg-gradient-to-l from-rose-400 to-indigo-500 w-full py-2 px-4 md:py-[9px] md:px-11 text-white md:text-base lg:text-xl font-medium rounded-lg">View Details</button>
                                                 </Link>
                                             </div>

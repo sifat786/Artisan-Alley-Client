@@ -94,7 +94,7 @@ const MyCraft = () => {
     }
 
     return (
-        <div className="container my-[100px]">
+        <div className="container my-10 md:my-[70px] lg:my-[100px]">
 
         <div className=" md:mx-auto w-fit my-6 font-medium">
             <select

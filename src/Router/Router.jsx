@@ -11,6 +11,9 @@ import SubCategory from "../Pages/SubCategory";
 import UpdateCraft from "../Pages/UpdateCraft";
 import CraftDetails from './../Pages/CraftDetails';
 import PrivateRoute from "./PrivateRoute";
+import CraftDetails2 from "../Pages/CraftDetails2";
+
+
 
 const router = createBrowserRouter([
 
@@ -51,6 +54,10 @@ const router = createBrowserRouter([
         {
           path: '/craftDetails/:id',
           element: <PrivateRoute><CraftDetails/></PrivateRoute>,
+        },
+        {
+          path: '/craftDetails2/:id',
+          element: <PrivateRoute><CraftDetails2/></PrivateRoute>,
         },
         {
           path: '/subCategory/:category',

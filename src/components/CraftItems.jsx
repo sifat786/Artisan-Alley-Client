@@ -6,7 +6,7 @@ import { IoStar } from 'react-icons/io5';
 
 
 const CraftItems = () => {
-
+    
     const {data,loading} = useCrafts();
 
     return (

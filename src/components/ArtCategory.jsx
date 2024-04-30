@@ -6,24 +6,12 @@ import water from '../assets/Watercolour Painting.jpg';
 import oil from '../assets/Oil Painting.jpg';
 import coal from '../assets/coal.jpg';
 import cartoon from '../assets/Cartoon Drawing.jpg';
-import { useState } from "react";
-import { useEffect } from "react";
-
 
 
 const ArtCategory = () => {
-
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        fetch('https://artisan-alley-server-rose.vercel.app/arts/:category')
-        .then(res => res.json())
-        .then(data => setItems(data))
-    },[])
-    console.log(items);
         
     return (
-        <div className="mt-[100px]">
+        <div className="mt-10 md:mt-[70px] lg:mt-[100px]">
             <h1 className="text-center text-2xl lg:text-[35px] font-semibold bg-gradient-to-r from-red-500 via-green-500 to-purple-500 text-transparent bg-clip-text mb-5 md:mb-10 border-4  w-fit mx-auto py-2 px-5 ">Art and Craft Categories</h1>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 space-y-4 md:space-y-0">

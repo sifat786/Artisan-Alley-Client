@@ -46,6 +46,7 @@ const AddCraft = () => {
             form.reset();
         })
         .catch(err => console.log(err))
+
     };
 
     
@@ -56,11 +57,11 @@ const AddCraft = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className="font-rale md:text-xl ">Name</label>
-                            <input type="text" name="name" placeholder="Enter painting name" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
+                            <input type="text" name="name" required placeholder="Enter painting name" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
                         </div>
                         <div className=" flex flex-col">
                             <label className="font-rale md:text-xl">Subcategory Name</label>
-                            <select name="category" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
+                            <select name="category" required className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
                                 <option>Landscape Painting</option>
                                 <option>Portrait Drawing</option>
                                 <option>Water Color Painting</option>
@@ -71,30 +72,30 @@ const AddCraft = () => {
                         </div>
                         <div>
                             <label className=" font-rale md:text-xl">Image</label>
-                            <input type="url" name="photo" placeholder="Enter photo url" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
+                            <input type="url" name="photo" required placeholder="Enter photo url" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
                         </div>
                         <div>
                             <label className=" font-rale md:text-xl">Price</label>
-                            <input type="number" name="price" placeholder="Enter painting price" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
+                            <input type="number" name="price" required placeholder="Enter painting price" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
                         </div>
                         <div>
                             <label className=" font-rale md:text-xl">customization</label>
-                            <select name="customization" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
+                            <select name="customization" required className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
                         </div>
                         <div>
                             <label className=" font-rale md:text-xl">Rating</label>
-                            <input type="text" name="rating" placeholder="Enter painting rating" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
+                            <input type="text" name="rating" required placeholder="Enter painting rating" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
                         </div>
                         <div>
                             <label className=" font-rale md:text-xl">Processing Time(hr)</label>
-                            <input type="number" name="time" placeholder="Enter painting processing time" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
+                            <input type="number" name="time" required placeholder="Enter painting processing time" className="input input-info mt-2 py-[11px] pl-[11px]   text-base w-full font-rale rounded-md " />
                         </div>
                         <div>
                             <label className=" font-rale md:text-xl">Stock Status</label>
-                            <select name="stock" className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
+                            <select name="stock" required className="select select-info mt-2 pl-[11px]  text-base w-full font-rale rounded-md ">
                                 <option>In stock</option>
                                 <option>Made to order</option>
                             </select>
@@ -102,7 +103,7 @@ const AddCraft = () => {
 
                         <div className="col-span-full">
                             <label className=" font-rale md:text-xl">Description</label>
-                            <textarea name="description" className="textarea textarea-info text-base w-full font-rale rounded-md h-32 pl-[11px]" placeholder="write a short description here..."></textarea>
+                            <textarea name="description" required className="textarea textarea-info text-base w-full font-rale rounded-md h-32 pl-[11px]" placeholder="write a short description here..."></textarea>
                         </div>
                         <div className="col-span-full mt-5 flex justify-center lg:justify-end">
                             <input type="submit" value="Add Painting" className='py-[10px] bg-gradient-to-l from-blue-300 to-indigo-500 text-center rounded-[5px] w-full lg:w-auto px-0 lg:px-[100px] cursor-pointer text-black text-2xl font-bold'/>

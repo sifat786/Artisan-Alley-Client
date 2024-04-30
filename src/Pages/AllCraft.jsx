@@ -45,7 +45,7 @@ const AllCraft = () => {
                                     const { _id,price,rating,time,category } = craft;
                                     return (
                                         <tbody key={_id}>
-                                            <tr className="text-center">
+                                            <tr className="text-center md:text-left">
                                                 <th className="hidden md:block">{idx + 1}</th>
                                                 <td>{category}</td>
                                                 <td>{price}</td>
