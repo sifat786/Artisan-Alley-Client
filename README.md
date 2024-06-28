@@ -1,6 +1,6 @@
 # Welcome to Artisan Alley
 
-**Live Site URL:** [Artisan Alley](https://artisan-alley-cc33d.web.app/)
+**Live Site URL:** [Artisan Alley](https://artisan-alley-cc33d.web.app)
 
 
 ## Features and Characteristics
